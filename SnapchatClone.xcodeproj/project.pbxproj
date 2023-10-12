@@ -12,6 +12,7 @@
 		A70F641F2ACD76C40060C739 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70F641E2ACD76C40060C739 /* Upload.swift */; };
 		A70F64212ACD76D20060C739 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70F64202ACD76D20060C739 /* Settings.swift */; };
 		A75E1D432ACD669F00D43893 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A75E1D422ACD669F00D43893 /* GoogleService-Info.plist */; };
+		A78F0F542AD87F4A00D8F260 /* UserSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F0F532AD87F4A00D8F260 /* UserSingleton.swift */; };
 		A7B9ADDA2ACD7A7B00C0271E /* SnapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B9ADD92ACD7A7B00C0271E /* SnapVC.swift */; };
 		A7CC7D462ACD64DB00469A4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC7D452ACD64DB00469A4F /* AppDelegate.swift */; };
 		A7CC7D482ACD64DB00469A4F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CC7D472ACD64DB00469A4F /* SceneDelegate.swift */; };
@@ -28,6 +29,7 @@
 		A70F641E2ACD76C40060C739 /* Upload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		A70F64202ACD76D20060C739 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		A75E1D422ACD669F00D43893 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A78F0F532AD87F4A00D8F260 /* UserSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSingleton.swift; sourceTree = "<group>"; };
 		A7B9ADD92ACD7A7B00C0271E /* SnapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapVC.swift; sourceTree = "<group>"; };
 		A7CC7D422ACD64DB00469A4F /* SnapchatClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapchatClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CC7D452ACD64DB00469A4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,14 @@
 			path = Delegates;
 			sourceTree = "<group>";
 		};
+		A78F0F502AD87F0F00D8F260 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A78F0F532AD87F4A00D8F260 /* UserSingleton.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A7CC7D392ACD64DB00469A4F = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 		A7CC7D442ACD64DB00469A4F /* SnapchatClone */ = {
 			isa = PBXGroup;
 			children = (
+				A78F0F502AD87F0F00D8F260 /* Model */,
 				A70F64232ACD77120060C739 /* Delegates */,
 				A70F64222ACD76ED0060C739 /* ViewControllers */,
 				A7CC7D4B2ACD64DB00469A4F /* Main.storyboard */,
@@ -240,6 +251,7 @@
 			files = (
 				A70F64212ACD76D20060C739 /* Settings.swift in Sources */,
 				A7CC7D4A2ACD64DB00469A4F /* SignInVC.swift in Sources */,
+				A78F0F542AD87F4A00D8F260 /* UserSingleton.swift in Sources */,
 				A70F641F2ACD76C40060C739 /* Upload.swift in Sources */,
 				A70F641D2ACD76700060C739 /* Feed.swift in Sources */,
 				A7B9ADDA2ACD7A7B00C0271E /* SnapVC.swift in Sources */,
