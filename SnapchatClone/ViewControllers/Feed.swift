@@ -13,13 +13,11 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
-    
     let fire = Firestore.firestore()
     
     var snapArray = [snapCellStruct]()
     
     var chosenSnap : snapCellStruct?
-    var timeLeft : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,15 +47,15 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                                     if let differnce = Calendar.current.dateComponents([.hour], from: date.dateValue(), to: Date()).hour {
                                         if differnce >= 24 {
                                             self.fire.collection("Snaps").document(docuID).delete { error in
-                                                
+            
                                             }
+                                        } else {
+                                            //TIMELEFT -> SNAPVC
+                                            //self.timeLeft = 24 - differnce
+                                            let snapObject = snapCellStruct(username: username, imgUrlArr: imageUrlArr, date: date.dateValue(), timeDiff: 24 - differnce)
+                                            self.snapArray.append(snapObject)
                                         }
-                                        
-                                        //TIMELEFT -> SNAPVC
-                                        self.timeLeft = 24 - differnce
                                     }
-                                    let snapObject = snapCellStruct(username: username, imgUrlArr: imageUrlArr, date: date.dateValue())
-                                    self.snapArray.append(snapObject)
                                 }
                             }
                         }
@@ -111,7 +109,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if segue.identifier == "toSnapVC" {
             let destinationVC = segue.destination as! SnapVC
             destinationVC.selectedSnap = chosenSnap
-            destinationVC.selectedTime = self.timeLeft
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

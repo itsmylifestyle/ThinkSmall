@@ -13,17 +13,19 @@ class SnapVC: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     
     var selectedSnap : snapCellStruct?
-    var selectedTime : Int?
     var inputArray = [AlamofireSource]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        timeLabel.text = "Time Left: "
+        timeLabel.textColor = UIColor.black
         
         
         if let snap = selectedSnap {
+            
+            timeLabel.text = "Time Left: \(snap.timeDiff)"
+            
             for img in snap.imgUrlArr {
                 inputArray.append(AlamofireSource(urlString: img)!)
             }
@@ -32,10 +34,17 @@ class SnapVC: UIViewController {
         let imgSlideShow = ImageSlideshow(frame: CGRect(x: 10, y: 10, width: self.view.frame.width * 0.95, height: self.view.frame.height * 0.9))
         imgSlideShow.backgroundColor = UIColor.white
         
+        let pageInd = UIPageControl()
+        pageInd.currentPageIndicatorTintColor = UIColor.lightGray
+        pageInd.pageIndicatorTintColor = UIColor.black
+        imgSlideShow.pageIndicator = pageInd
+        
         imgSlideShow.contentScaleMode = UIViewContentMode.scaleAspectFit
         imgSlideShow.setImageInputs(inputArray)
         
         self.view.addSubview(imgSlideShow)
+        
+        self.view.bringSubviewToFront(timeLabel)
     }
     
 
