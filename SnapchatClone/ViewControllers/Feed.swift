@@ -60,6 +60,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                             }
                         }
                         self.tableView.reloadData()
+                        //make a review of feedVC
                     }
                 }
             }
